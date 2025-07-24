@@ -1,18 +1,16 @@
-// This file provides a type definition for `process.env` to inform TypeScript
-// that this object is available in the execution environment (e.g., Google Studio),
-// even though this is client-side code.
+// File này cung cấp định nghĩa TypeScript cho các biến môi trường
+// được Vite cung cấp cho mã nguồn phía client.
 
-// By augmenting the global NodeJS namespace, we add our custom environment
-// variable to the existing `process.env` type definition without causing
-// a redeclaration error.
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      API_KEY?: string;
-    }
-  }
+interface ImportMetaEnv {
+  // Khóa API cho dịch vụ Google Gemini.
+  // Khóa này được đưa ra client theo yêu cầu của người dùng để đơn giản hóa việc triển khai.
+  // Trong môi trường production, cách an toàn hơn là giữ khóa này trên máy chủ
+  // và truy cập nó thông qua một serverless function proxy.
+  readonly VITE_API_KEY: string;
+
+  // Thêm các biến môi trường phía client khác tại đây.
 }
 
-// This empty export is required to treat this file as a module and not
-// a script. This is important for global augmentation to work correctly.
-export {};
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
