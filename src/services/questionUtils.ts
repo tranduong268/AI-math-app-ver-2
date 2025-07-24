@@ -1,4 +1,3 @@
-
 import { ShapeType } from '../../types';
 import { UNLOCKABLE_IMAGE_SETS } from '../../constants';
 import { ICON_DATA } from '../data/iconData';
@@ -86,20 +85,26 @@ const VIETNAMESE_NAMES: Record<string, string> = {
     // Categories
     animal: 'động vật', plant: 'thực vật', food: 'đồ ăn', drink: 'đồ uống', vehicle: 'phương tiện', clothing: 'quần áo', tool: 'dụng cụ', household: 'đồ gia dụng', nature: 'thiên nhiên', celestial: 'vũ trụ', activity: 'hoạt động', technology: 'công nghệ', toy: 'đồ chơi', instrument: 'nhạc cụ', building: 'tòa nhà', misc: 'khác', shape_color: 'hình dạng',
     // Sub-categories
-    mammal: 'động vật có vú', bird: 'loài chim', reptile: 'loài bò sát', fish: 'loài cá', insect: 'côn trùng',
-    fruit: 'trái cây', vegetable: 'rau củ',
+    mammal: 'động vật có vú', bird: 'loài chim', reptile: 'loài bò sát', fish: 'loài cá', insect: 'côn trùng', invertebrate: 'động vật không xương sống',
+    fruit: 'trái cây', vegetable: 'rau củ', flower: 'loài hoa', tree: 'loài cây', dish: 'món ăn', dessert: 'món tráng miệng', furniture: 'nội thất', appliance: 'thiết bị',
     land_vehicle: 'phương tiện trên cạn', water_vehicle: 'phương tiện dưới nước', air_vehicle: 'phương tiện trên không',
+    sports_equipment: 'dụng cụ thể thao', school_supply: 'dụng cụ học tập',
+    // Tertiary
+    pet: 'thú cưng', livestock: 'gia súc', wild_animal: 'động vật hoang dã', poultry: 'gia cầm',
     // Environments
-    land: 'trên cạn', water: 'dưới nước', sky: 'trên không', underwater: 'dưới biển', space: 'vũ trụ',
+    land: 'trên cạn', water: 'dưới nước', sky: 'trên không', underwater: 'dưới biển', space: 'vũ trụ', indoor: 'trong nhà',
     // Propulsion
     road: 'đường bộ', rail: 'đường sắt',
     // Diet
-    carnivore: 'thịt', herbivore: 'cỏ', omnivore: 'tạp',
-    // Tertiary
-    pet: 'thú cưng', livestock: 'gia súc', wild_animal: 'động vật hoang dã', poultry: 'gia cầm',
+    carnivore: 'ăn thịt', herbivore: 'ăn cỏ', omnivore: 'ăn tạp',
+    // Function
+    write: 'viết', cut: 'cắt', cook: 'nấu', eat: 'ăn', sit: 'ngồi', clean: 'lau dọn',
+    // Power Source
+    electric: 'dùng điện', manual: 'dùng tay',
     // Colors
     red: 'màu đỏ', orange: 'màu cam', yellow: 'màu vàng', green: 'màu xanh lá', blue: 'màu xanh biển', purple: 'màu tím', pink: 'màu hồng', brown: 'màu nâu', black: 'màu đen', white: 'màu trắng', gray: 'màu xám', multi_color: 'nhiều màu'
 };
+
 
 export const getVietnameseName = (key: string | undefined): string => {
     if (!key) return 'khác';
