@@ -1,0 +1,214 @@
+/* Custom animations for Visual Pattern and Odd One Out games */
+
+@keyframes shake {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  10%, 30%, 50%, 70%, 90% { 
+    transform: translateX(-3px); 
+  }
+  20%, 40%, 60%, 80% { 
+    transform: translateX(3px); 
+  }
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes scaleIn {
+  0% { 
+    transform: scale(0.9); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { 
+    transform: rotate(0deg); 
+  }
+  25% { 
+    transform: rotate(-2deg); 
+  }
+  75% { 
+    transform: rotate(2deg); 
+  }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); 
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+/* Apply animations */
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pattern-specific animations */
+.pattern-sequence-item {
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.pattern-sequence-item:nth-child(1) { animation-delay: 0.1s; }
+.pattern-sequence-item:nth-child(2) { animation-delay: 0.2s; }
+.pattern-sequence-item:nth-child(3) { animation-delay: 0.3s; }
+.pattern-sequence-item:nth-child(4) { animation-delay: 0.4s; }
+.pattern-sequence-item:nth-child(5) { animation-delay: 0.5s; }
+.pattern-sequence-item:nth-child(6) { animation-delay: 0.6s; }
+.pattern-sequence-item:nth-child(7) { animation-delay: 0.7s; }
+.pattern-sequence-item:nth-child(8) { animation-delay: 0.8s; }
+.pattern-sequence-item:nth-child(9) { animation-delay: 0.9s; }
+
+/* Odd one out specific animations */
+.odd-option-item {
+  animation: scaleIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.odd-option-item:nth-child(1) { animation-delay: 0.1s; }
+.odd-option-item:nth-child(2) { animation-delay: 0.2s; }
+.odd-option-item:nth-child(3) { animation-delay: 0.3s; }
+.odd-option-item:nth-child(4) { animation-delay: 0.4s; }
+.odd-option-item:nth-child(5) { animation-delay: 0.5s; }
+.odd-option-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Ripple effect */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Gradient text animation */
+.gradient-text {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Success celebration animation */
+.celebrate {
+  animation: celebrate 0.6s ease-in-out;
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Pattern highlight effect */
+.pattern-highlight {
+  position: relative;
+}
+
+.pattern-highlight::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+  border-radius: inherit;
+  z-index: -1;
+  animation: highlight-rotate 2s linear infinite;
+}
+
+@keyframes highlight-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -189,6 +189,41 @@ const theme = {
   classes: {
     // A class for unknown slots in math questions for consistency
     mathUnknown: 'font-semibold text-pink-600',
+  },
+
+  // =================================================================
+  // ANIMATIONS
+  // =================================================================
+  animations: {
+    shake: 'animate-[shake_0.5s_ease-in-out]',
+    bounce: 'animate-bounce',
+    pulse: 'animate-pulse',
+    fadeIn: 'animate-[fadeIn_0.5s_ease-out]',
+    slideUp: 'animate-[slideUp_0.3s_ease-out]',
+    scaleIn: 'animate-[scaleIn_0.3s_ease-out]',
+  },
+
+  // =================================================================
+  // CUSTOM KEYFRAMES (to be added to tailwind.config)
+  // =================================================================
+  keyframes: {
+    shake: {
+      '0%, 100%': { transform: 'translateX(0)' },
+      '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-2px)' },
+      '20%, 40%, 60%, 80%': { transform: 'translateX(2px)' },
+    },
+    fadeIn: {
+      '0%': { opacity: '0', transform: 'translateY(10px)' },
+      '100%': { opacity: '1', transform: 'translateY(0)' },
+    },
+    slideUp: {
+      '0%': { transform: 'translateY(20px)', opacity: '0' },
+      '100%': { transform: 'translateY(0)', opacity: '1' },
+    },
+    scaleIn: {
+      '0%': { transform: 'scale(0.9)', opacity: '0' },
+      '100%': { transform: 'scale(1)', opacity: '1' },
+    },
   }
 };
 
