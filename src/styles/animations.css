@@ -1,0 +1,71 @@
+/* Custom animations for Visual Pattern and Odd One Out games */
+
+@keyframes shake {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  10%, 30%, 50%, 70%, 90% { 
+    transform: translateX(-3px); 
+  }
+  20%, 40%, 60%, 80% { 
+    transform: translateX(3px); 
+  }
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  0% { 
+    transform: scale(0.9); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+/* Apply animations */
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Pattern-specific animations */
+.pattern-sequence-item {
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.pattern-sequence-item:nth-child(1) { animation-delay: 0.1s; }
+.pattern-sequence-item:nth-child(2) { animation-delay: 0.2s; }
+.pattern-sequence-item:nth-child(3) { animation-delay: 0.3s; }
+.pattern-sequence-item:nth-child(4) { animation-delay: 0.4s; }
+.pattern-sequence-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Odd one out specific animations */
+.odd-option-item {
+  animation: scaleIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.odd-option-item:nth-child(1) { animation-delay: 0.1s; }
+.odd-option-item:nth-child(2) { animation-delay: 0.2s; }
+.odd-option-item:nth-child(3) { animation-delay: 0.3s; }
+.odd-option-item:nth-child(4) { animation-delay: 0.4s; }
